@@ -60,6 +60,7 @@ import {
     TableRow,
 } from "@/components/ui/table";
 import { cookies } from 'next/headers';
+import RemoveFromCart from "./RemoveFromCart";
 async function getCart() {
     const token = (await cookies()).get('token')?.value;
     if (!token) {
@@ -100,6 +101,11 @@ const CartItem = async () => {
     } catch (error) {
         console.log(error);
     }
+    if (!cart) {
+        return (
+            <div>No items in the cart</div>
+        );
+    }
 
     return (
         <Table>
@@ -118,6 +124,9 @@ const CartItem = async () => {
                         <TableCell>{item.itemId.name}</TableCell>
                         <TableCell>{item.itemId.description}</TableCell>
                         <TableCell className="text-right">{item.quantity}</TableCell>
+                        <TableCell className="text-right">
+                            <RemoveFromCart item={item.itemId._id} />
+                        </TableCell>
                     </TableRow>
                 ))}
             </TableBody>

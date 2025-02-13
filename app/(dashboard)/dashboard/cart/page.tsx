@@ -4,6 +4,8 @@ const page = () => {
     return (
         <div className="p-4">
             <CartItem />
+
+            
         </div>
     )
 }
