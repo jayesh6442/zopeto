@@ -9,23 +9,13 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import useAuth from "@/hooks/useAuth"
 import axios from "axios"
-import { useRouter } from "next/navigation"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Cookie from "js-cookie";
 const Page = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
-    const { isAuthenticated } = useAuth();
-    const router = useRouter();
-
-    useEffect(() => {
-        if (isAuthenticated) {
-            router.push("/dashboard");
-        }
-    }, [isAuthenticated, router]);
     return (
         <div className="flex flex-col h-screen items-center justify-center gap-4 py-20">
 
