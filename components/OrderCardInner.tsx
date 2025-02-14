@@ -1,7 +1,7 @@
 import React from 'react'
 import { Card } from './ui/card'
 
-const OrderCardInner = ({ name, status, deliveryAddress, totalPrice }: { name: string, status: string, deliveryAddress: string, totalPrice: number }) => {
+const OrderCardInner = ({ name, status, deliveryAddress, totalPrice, bid }: { name: string, status: string, deliveryAddress: string, totalPrice: number, bid: number }) => {
     return (
         <Card className="flex flex-col gap-4 p-6 bg-red-500 text-black mt-4">
             <div className="flex items-center gap-4">
@@ -13,6 +13,7 @@ const OrderCardInner = ({ name, status, deliveryAddress, totalPrice }: { name: s
             <div className="text-4xl font-bold">₹{totalPrice}</div>
             <p className=" md:text-xl">{status}</p>
             <p className="md:text-xl">{deliveryAddress}</p>
+            <p className="md:text-xl">Biding: {bid}</p>
         </Card>
     )
 }

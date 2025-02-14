@@ -10,9 +10,10 @@ interface OrderCardProps {
   status: string;
   deliveryAddress: string;
   totalPrice: number;
+  bid: number;
 }
 
-export default function OrderCard({ name, status, deliveryAddress, totalPrice }: OrderCardProps) {
+export default function OrderCard({ name, status, deliveryAddress, totalPrice, bid }: OrderCardProps) {
   return (
     <div className="flex flex-col min-h-dvh">
       <main className="flex-1 py-12 md:py-24 lg:py-32">
@@ -21,7 +22,7 @@ export default function OrderCard({ name, status, deliveryAddress, totalPrice }:
             <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Your Orders</h1>
           </div>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <OrderCardInner name={name} status={status} deliveryAddress={deliveryAddress} totalPrice={totalPrice} />
+            <OrderCardInner bid={bid} name={name} status={status} deliveryAddress={deliveryAddress} totalPrice={totalPrice} />
           </div>
         </div>
       </main>

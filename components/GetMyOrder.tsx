@@ -50,11 +50,13 @@ const GetMyOrder = async () => {
                     status={order.status}
                     deliveryAddress={`${order.deliveryAddress.street}, ${order.deliveryAddress.city}, ${order.deliveryAddress.state} ${order.deliveryAddress.zip}`}
                     totalPrice={order.totalPrice}
+                    bid={order.bid}
                 />
             ))}
 
         </div>
     )
 }
+
 
 export default GetMyOrder
