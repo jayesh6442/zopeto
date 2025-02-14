@@ -6,7 +6,7 @@ import GetMyOrder from "@/components/GetMyOrder"
 
 const page = () => {
     return (
-        <div>
+        <div className="p-4">
             <GetMyOrder />
         </div>
     )

@@ -5,7 +5,7 @@ const page = () => {
         <div className="p-4">
             <CartItem />
 
-            
+                        
         </div>
     )
 }
