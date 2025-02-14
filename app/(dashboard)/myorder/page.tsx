@@ -1,7 +1,14 @@
+import GetMyOrder from "@/components/GetMyOrder"
+
+
+
+
 
 const page = () => {
     return (
-        <div>page</div>
+        <div>
+            <GetMyOrder />
+        </div>
     )
 }
 

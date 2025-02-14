@@ -27,7 +27,7 @@ const AddItemToMenu = () => {
         <div>
             <Dialog>
                 <DialogTrigger asChild>
-                    <Button variant="outline">Edit Profile</Button>
+                    <Button variant="outline">Add Items to Order</Button>
                 </DialogTrigger>
                 <DialogContent className="sm:max-w-[425px]">
                     <DialogHeader>
