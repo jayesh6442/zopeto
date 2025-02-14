@@ -108,29 +108,32 @@ const CartItem = async () => {
     }
 
     return (
-        <Table>
-            <TableHeader>
-                <TableRow>
-                    <TableHead className="w-[100px]">Price</TableHead>
-                    <TableHead>Name</TableHead>
-                    <TableHead>Description</TableHead>
-                    <TableHead className="text-right">Quantity</TableHead>
-                </TableRow>
-            </TableHeader>
-            <TableBody>
-                {cart.items.map((item: Cart) => (
-                    <TableRow key={item._id}>
-                        <TableCell className="font-medium">{item.itemId.price}</TableCell>
-                        <TableCell>{item.itemId.name}</TableCell>
-                        <TableCell>{item.itemId.description}</TableCell>
-                        <TableCell className="text-right">{item.quantity}</TableCell>
-                        <TableCell className="text-right">
-                            <RemoveFromCart item={item.itemId._id} />
-                        </TableCell>
+        <>
+            <h1 className=""> Total Price: {cart.totalPrice}</h1>
+            <Table>
+                <TableHeader>
+                    <TableRow>
+                        <TableHead className="w-[100px]">Price</TableHead>
+                        <TableHead>Name</TableHead>
+                        <TableHead>Description</TableHead>
+                        <TableHead className="text-right">Quantity</TableHead>
                     </TableRow>
-                ))}
-            </TableBody>
-        </Table>
+                </TableHeader>
+                <TableBody>
+                    {cart.items.map((item: Cart) => (
+                        <TableRow key={item._id}>
+                            <TableCell className="font-medium">{item.itemId.price}</TableCell>
+                            <TableCell>{item.itemId.name}</TableCell>
+                            <TableCell>{item.itemId.description}</TableCell>
+                            <TableCell className="text-right">{item.quantity}</TableCell>
+                            <TableCell className="text-right">
+                                <RemoveFromCart item={item.itemId._id} />
+                            </TableCell>
+                        </TableRow>
+                    ))}
+                </TableBody>
+            </Table>
+        </>
     );
 };
 
