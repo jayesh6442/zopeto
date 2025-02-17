@@ -19,7 +19,6 @@ const PlaceOrderForm = () => {
     const [bid, setBid] = useState("")
     const [selectedAddressId, setSelectedAddressId] = useState('')
     const [isLoading, setIsLoading] = useState(false)
-    const [error, setError] = useState("")
     useEffect(() => {
         const fetchAddresses = async () => {
             try {
@@ -70,7 +69,6 @@ const PlaceOrderForm = () => {
         } catch (error) {
             console.error('Error placing order:', error)
             alert('Failed to place order. Please try again.')
-            setError(error.message)
         } finally {
             setIsLoading(false)
         }
@@ -118,7 +116,6 @@ const PlaceOrderForm = () => {
                             step="0.01"
                         />
                     </div>
-                    {error && <p className="text-red-500">{error}</p>}
                     <button
                         type="submit"
                         disabled={isLoading}
